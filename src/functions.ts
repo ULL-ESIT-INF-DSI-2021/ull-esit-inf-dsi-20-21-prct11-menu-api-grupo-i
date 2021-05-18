@@ -24,7 +24,7 @@ export const ingrediente = (command: string, callback:
 
 export const plato = (command: string, callback:
   (error: string | undefined, output: string | undefined) => void) => {
-  const url = 'http://localhost:3000/ingredients';
+  const url = 'http://localhost:3000/courses';
   request({url: url, json: true}, (error, response) => {
     if (error) {
       callback(`Error: ${error.message}`, undefined);
@@ -47,7 +47,7 @@ export const plato = (command: string, callback:
 
 export const menu = (command: string, callback:
   (error: string | undefined, output: string | undefined) => void) => {
-  const url = 'http://localhost:3000/ingredients';
+  const url = 'http://localhost:3000/menus';
   request({url: url, json: true}, (error, response) => {
     if (error) {
       callback(`Error: ${error.message}`, undefined);
