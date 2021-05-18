@@ -1,20 +1,76 @@
 import * as express from 'express';
+import {ingrediente, plato, menu} from './functions';
 
 const app = express();
 
 app.get('/ingredients', (req, res) => {
   if (!req.query.cmd) {
     res.send({
-      error: 'At least, a command must be specified',
+      error: 'Al menos se debe especificar un comando',
     });
   } else {
     const command = req.query.cmd.toString();
-    const args = req.query.args? req.query.args?.toString().split(' '): [];
+
+    ingrediente(command, (err, out) => {
+      if (err) {
+        res.send({
+          error: err,
+        });
+      } else if (out) {
+        res.send({
+          output: out,
+        });
+      }
+    });
   }
 });
 
-app.get('*', (_, res) => {
-  res.send('<h1>404</h1>');
+app.get('/courses', (req, res) => {
+  if (!req.query.cmd) {
+    res.send({
+      error: 'Al menos se debe especificar un comando',
+    });
+  } else {
+    const command = req.query.cmd.toString();
+
+    plato(command, (err, out) => {
+      if (err) {
+        res.send({
+          error: err,
+        });
+      } else if (out) {
+        res.send({
+          output: out,
+        });
+      }
+    });
+  }
+});
+
+app.get('/menus', (req, res) => {
+  if (!req.query.cmd) {
+    res.send({
+      error: 'Al menos se debe especificar un comando',
+    });
+  } else {
+    const command = req.query.cmd.toString();
+
+    menu(command, (err, out) => {
+      if (err) {
+        res.send({
+          error: err,
+        });
+      } else if (out) {
+        res.send({
+          output: out,
+        });
+      }
+    });
+  }
+});
+
+app.all('*', (_, res) => {
+  res.status(404).send();
 });
 
 app.listen(3000, () => {

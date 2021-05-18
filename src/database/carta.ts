@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import {Carta} from "../carta";
+import {Carta} from "../models/carta";
 import * as Menu from "./menus";
 import * as Dish from "./dishes";
 

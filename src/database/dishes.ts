@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import {Plate} from "../plato";
+import {Plate} from "../models/plato";
 import * as Alimento from "./aliments";
 // Entrantes
 

@@ -1,4 +1,4 @@
-import {Menu, menu} from "../menu";
+import {Menu, menu} from "../models/menu";
 import * as Dish from "./dishes";
 
 

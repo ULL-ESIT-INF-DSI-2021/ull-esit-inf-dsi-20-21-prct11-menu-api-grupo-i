@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import {Food} from "../alimento";
+import {Food} from "../models/alimento";
 
 export const Almendrado: Food = new Food('Almendrado',
     'España', [431, 9, 57, 18.1], 5.05, 'Grupo1');
