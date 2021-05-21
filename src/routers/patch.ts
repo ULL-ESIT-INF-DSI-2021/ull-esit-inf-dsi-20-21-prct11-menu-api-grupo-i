@@ -8,5 +8,5 @@ patchRouter.patch('/ingredients', async (req, res) => {
     });
 }
 return 0;
+});
 
-})

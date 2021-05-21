@@ -1,16 +1,22 @@
-import { Document, Schema, model } from 'mongoose';
+import {Document, Schema, model} from 'mongoose';
 
-interface ingredientInterface extends Document {
-  /*locality: string,
-  nutrients: number[],*/
+export interface ingredientInterface extends Document {
+  name: string,
+  locality: string,
+  nutrients: number[],
   price: number,
-  //group:  'Grupo1'| 'Grupo2'| 'Grupo3'| 'Grupo4'| 'Grupo5'
+  group: 'Grupo1'| 'Grupo2'| 'Grupo3'| 'Grupo4'| 'Grupo5'
 }
 
 const ingredientSchema = new Schema({
-  locality: {
+  name: {
     type: String,
     unique: true,
+    required: true,
+    trim: true,
+  },
+  locality: {
+    type: String,
     required: true,
     trim: true,
   },
@@ -32,4 +38,5 @@ const ingredientSchema = new Schema({
   },
 });
 
-export const ingredient = model<ingredientInterface>('ingredient', ingredientSchema);
+export const Ingredient = model<ingredientInterface>(
+    'ingredient', ingredientSchema);

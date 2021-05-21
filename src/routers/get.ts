@@ -1,71 +1,21 @@
 import * as express from 'express';
-import {ingrediente, plato, menu} from '../functions';
+import {Ingredient} from '../models/alimentoSch';
+
 
 // eslint-disable-next-line new-cap
 export const getRouter = express.Router();
 
-getRouter.get('/ingredients', (req, res) => {
-  if (!req.query.cmd) {
-    res.send({
-      error: 'Al menos se debe especificar un comando',
-    });
-  } else {
-    const command = req.query.cmd.toString();
+getRouter.get('/ingredients', async (req, res) => {
+  const filter = req.query.name?{name: req.query.name.toString()}:{};
 
-    ingrediente(command, (err, out) => {
-      if (err) {
-        res.send({
-          error: err,
-        });
-      } else if (out) {
-        res.send({
-          output: out,
-        });
-      }
-    });
-  }
-});
+  try {
+    const ingredients = await Ingredient.find(filter);
 
-getRouter.get('/courses', (req, res) => {
-  if (!req.query.cmd) {
-    res.send({
-      error: 'Al menos se debe especificar un comando',
-    });
-  } else {
-    const command = req.query.cmd.toString();
-
-    plato(command, (err, out) => {
-      if (err) {
-        res.send({
-          error: err,
-        });
-      } else if (out) {
-        res.send({
-          output: out,
-        });
-      }
-    });
-  }
-});
-
-getRouter.get('/menus', (req, res) => {
-  if (!req.query.cmd) {
-    res.send({
-      error: 'Al menos se debe especificar un comando',
-    });
-  } else {
-    const command = req.query.cmd.toString();
-
-    menu(command, (err, out) => {
-      if (err) {
-        res.send({
-          error: err,
-        });
-      } else if (out) {
-        res.send({
-          output: out,
-        });
-      }
-    });
+    if (ingredients.length !== 0) {
+      return res.send(ingredients);
+    }
+    return res.status(404).send();
+  } catch (error) {
+    return res.status(500).send();
   }
 });
