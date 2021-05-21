@@ -1,4 +1,4 @@
-import {Menu, menu} from "../models/menu";
+/* import {Menu, menu} from "../models/menu";
 import * as Dish from "./dishes";
 
 
@@ -21,3 +21,4 @@ export const Menu4: Menu= new Menu(menu4);
 const menu5: menu=[Dish.AguacatesRellenos, Dish.CremaCalabacin,
   Dish.ConejoPapas, Dish.HeladoCasa];
 export const Menu5: Menu= new Menu(menu5);
+*/

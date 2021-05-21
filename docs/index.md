@@ -17,7 +17,7 @@
 
 ## Introducción<a name="intro"></a>
 
-En esta practica grupal tendremos que establecer un diseño orientado a objetos para diseñar menús, creando una serie de clases como son alimento, plato y menú que nos permitiran emular la estructura. Seguiremos usando lo aprendido en las anteriores practicas como el TypeDoc y TDD, además de los principios SOLID explicados en clase. Tambien empezaremos a utilizar unas nuevas herramientas *Inquirer.js* y *Lowdb* que nos permitiran interactuar con el programa de tal forma que se podran crear nuevos platos y menús. Comenzaremos a utilizar **SonarCloud** y **GitHub Actions** para comprobar la calidad y seguridad del código fuente. 
+En esta practica grupal tendremos que establecer un diseño orientado a objetos para diseñar menús, creando una serie de clases como son alimento, plato y menú que nos permitiran emular la estructura. Seguiremos usando lo aprendido en las anteriores practicas como el TypeDoc y TDD, además de los principios SOLID explicados en clase. Tambien empezaremos a utilizar unas nuevas herramientas *Inquirer.js* y *Lowdb* que nos permitiran interactuar con el programa de tal forma que se podran crear nuevos platos y menús. Comenzaremos a utilizar **SonarCloud** y **GitHub Actions** para comprobar la calidad y seguridad del código fuente.
 
 ---------------------
 

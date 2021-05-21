@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/*
 import {Plate} from "../models/plato";
 import * as Alimento from "./aliments";
 // Entrantes
@@ -71,3 +72,4 @@ export const FlanHuevoHelado: Plate = new Plate('Flan de huevo con helado de fre
 
 export const HeladoCasa: Plate = new Plate('Helado de la casa', 'Postre',
     [Alimento.Helado, Alimento.Limon, Alimento.Nata, Alimento.Platano], [250, 50, 75, 100]);
+*/

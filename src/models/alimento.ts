@@ -1,7 +1,7 @@
 /**
  * Diferentes grupos a los que puede pertenecer un alimento
  */
-type Grupo = "Grupo1" | "Grupo2" | "Grupo3" | "Grupo4" | "Grupo5";
+export type Grupo = "Grupo1" | "Grupo2" | "Grupo3" | "Grupo4" | "Grupo5";
 
 /**
 * Clase con la que representamos los alimentos
