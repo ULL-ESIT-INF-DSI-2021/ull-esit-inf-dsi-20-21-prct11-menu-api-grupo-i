@@ -1,9 +1,15 @@
 import * as express from 'express';
+import {totalComposition, totalPrice, predGroup,
+  priceMenu, compositionMenu} from '../function';
 import {Ingredient, ingredientInterface} from '../models/alimentoSch';
-import {Plate} from '../models/platoSch';
+import {Plate, plateInterface} from '../models/platoSch';
+import {Menu} from '../models/menuSch';
 
+// eslint-disable-next-line new-cap
 export const postRouter = express.Router();
-
+/**
+ * Método para añadir un nuevo ingrediente a la bbdd
+ */
 postRouter.post('/ingredients', async (req, res) => {
   const ingrediente = new Ingredient(req.body);
 
@@ -14,9 +20,11 @@ postRouter.post('/ingredients', async (req, res) => {
     res.status(400).send(error);
   }
 });
-
+/**
+ * Metodo para añadir un plato a la base de datos
+ */
 postRouter.post('/courses', async (req, res) => {
-  const {name, amount, price, nutrients, foods, predominant, category} = req.body;
+  const {name, amount, foods, category} = req.body;
 
   const ingredientesVector: ingredientInterface[] = [];
   let aux;
@@ -30,21 +38,58 @@ postRouter.post('/courses', async (req, res) => {
       });
     }
   }
-  console.log(name);
+
+  const compTotal = totalComposition(ingredientesVector, amount);
+  const precioTotal = totalPrice(ingredientesVector, amount);
+  const predom = predGroup(ingredientesVector);
   const plato = new Plate({
     "name": name,
     "amount": amount,
-    "price": price,
-    "nutrients": nutrients,
+    "price": precioTotal,
+    "nutrients": compTotal,
     "foods": ingredientesVector,
-    "predominant": predominant,
+    "predominant": predom,
     "category": category,
   });
-  console.log(plato);
+
   try {
     await plato.save();
     res.status(201).send(plato);
   } catch (error) {
     res.status(401).send(error);
+  }
+});
+
+postRouter.post('/menus', async (req, res) => {
+  const {name, plates} = req.body;
+  const platosVector: plateInterface[] = [];
+
+  let aux;
+  console.log(plates[0].name);
+  for (let i = 0; i < plates.length; i++) {
+    aux = await Plate.findOne({name: plates[i].name});
+    if (!(aux === null)) {
+      platosVector.push(aux);
+    } else {
+      res.status(400).send({
+        error: 'El plato no se encuentra en la base de datos',
+      });
+    }
+  }
+  const compTotal = compositionMenu(platosVector);
+  const precioTotal = priceMenu(platosVector);
+
+  const menu = new Menu({
+    "name": name,
+    "platos": platosVector,
+    "price": precioTotal,
+    "nutrients": compTotal,
+  });
+
+  try {
+    await menu.save();
+    res.status(201).send(menu);
+  } catch (error) {
+    res.status(400).send(error);
   }
 });

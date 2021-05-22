@@ -1,21 +1,19 @@
 import * as express from 'express';
-import {getRouter} from './routers/get';
+import './db/mongoose';
 import {postRouter} from './routers/post';
+import {getRouter} from './routers/get';
 import {deleteRouter} from './routers/delete';
-import './database/mongoose';
-
+import {defaultRouter} from './routers/default';
 
 const app = express();
 app.use(express.json());
-const port = process.env.PORT || 3000;
-app.use(getRouter);
 app.use(postRouter);
+app.use(getRouter);
 app.use(deleteRouter);
+app.use(defaultRouter);
 
-app.all('*', (_, res) => {
-  res.status(501).send();
-});
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
 });

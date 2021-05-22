@@ -1,7 +1,9 @@
 import * as express from 'express';
 import {Ingredient} from '../models/alimentoSch';
 import {Plate} from '../models/platoSch';
+import {Menu} from '../models/menuSch';
 
+// eslint-disable-next-line new-cap
 export const deleteRouter = express.Router();
 
 deleteRouter.delete('/ingredients', async (req, res) => {
@@ -43,3 +45,24 @@ deleteRouter.delete('/courses', async (req, res) => {
     return res.status(400).send();
   }
 });
+
+deleteRouter.delete('/menus', async (req, res) => {
+  if (!req.query.name) {
+    return res.status(400).send({
+      error: 'A title must be provided',
+    });
+  }
+
+  try {
+    const menu = await Menu.findOneAndDelete({
+      name: req.query.name.toString()});
+
+    if (!menu) {
+      return res.status(404).send();
+    }
+    return res.send(menu);
+  } catch (error) {
+    return res.status(400).send();
+  }
+});
+

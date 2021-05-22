@@ -2,7 +2,7 @@ import {Document, Schema, model} from 'mongoose';
 import {ingredientInterface, ingredientSchema} from './alimentoSch';
 
 export interface plateInterface extends Document {
-  nombre: string,
+  name: string,
   amount: number[],
   nutrients: number[],
   price: number,
@@ -33,14 +33,14 @@ export const plateSchema = new Schema({
   nutrients: [
     {
       type: Number,
-      required: true,
+      required: false,
       trim: true,
     },
   ],
   price:
     {
       type: Number,
-      required: true,
+      required: false,
       trim: true,
     },
   foods:
@@ -52,7 +52,7 @@ export const plateSchema = new Schema({
   predominant:
     {
       type: String,
-      required: true,
+      required: false,
       trim: true,
     },
   category: {

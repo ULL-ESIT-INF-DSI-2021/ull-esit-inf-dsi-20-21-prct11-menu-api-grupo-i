@@ -68,7 +68,7 @@ Aquí se indican los enlaces para ver el contenido de la clase Alimento y sus re
 
 Aquí se indican los enlaces para ver el contenido de la clase Alimento y sus respectivas pruebas.
 
-[Clase Alimento](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/src/alimento.ts)
+[menu.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct11-menu-api-grupo-i/blob/main/src/models/menu.ts)
 
 [Pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/tests/alimento.spec.ts)
 
@@ -77,23 +77,62 @@ Aquí se indican los enlaces para ver el contenido de la clase Alimento y sus re
 
 Aquí se indican los enlaces para ver el contenido de la clase Alimento y sus respectivas pruebas.
 
-[Clase Alimento](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/src/alimento.ts)
+[menuSch.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct11-menu-api-grupo-i/blob/main/src/models/menuSch.ts)
 
 [Pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/tests/alimento.spec.ts)
 
 ---------------------
 ### Direcctorio routers
 
+#### Fichero delete.ts
 
+Aquí se indican los enlaces para ver el contenido de la clase Alimento y sus respectivas pruebas.
 
-Aquí se indican los enlaces para ver el contenido de la clase Plato y sus respectivas pruebas.
+[delete.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct11-menu-api-grupo-i/blob/main/src/models/menu.ts)
 
-[Clase Plato](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/src/plato.ts)
-
-[Pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/tests/plato.spec.ts)
+[Pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/tests/alimento.spec.ts)
 
 
 ---------------------
+
+#### Fichero get.ts
+
+Aquí se indican los enlaces para ver el contenido de la clase Alimento y sus respectivas pruebas.
+
+[delete.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct11-menu-api-grupo-i/blob/main/src/models/menu.ts)
+
+[Pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/tests/alimento.spec.ts)
+
+
+---------------------
+
+
+#### Fichero patch.ts
+
+Aquí se indican los enlaces para ver el contenido de la clase Alimento y sus respectivas pruebas.
+
+[delete.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct11-menu-api-grupo-i/blob/main/src/models/menu.ts)
+
+[Pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/tests/alimento.spec.ts)
+
+
+---------------------
+
+#### Fichero post.ts
+
+Aquí se indican los enlaces para ver el contenido de la clase Alimento y sus respectivas pruebas.
+
+[delete.ts](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct11-menu-api-grupo-i/blob/main/src/models/menu.ts)
+
+[Pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-i/blob/master/tests/alimento.spec.ts)
+
+
+---------------------
+
+### Direcctorio database
+
+#### Fichero mongoose.ts
+
 
 ## Conclusión<a name="conclu"></a>
 
