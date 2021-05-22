@@ -1,5 +1,5 @@
 import * as express from 'express';
-import './db/mongoose';
+import './database/mongoose';
 import {postRouter} from './routers/post';
 import {getRouter} from './routers/get';
 import {deleteRouter} from './routers/delete';

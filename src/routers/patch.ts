@@ -1,7 +1,9 @@
 /* import * as express from 'express';
-import {ingredientSchema} from '../models/Ingredientes/IngredientSchema';
-import {platoSchema} from '../models/Platos/platoSchema';
-import {menuSchema} from '../models/menuSch';
+import {Ingredient, ingredientInterface} from '../models/alimentoSch';
+import {Plate, plateInterface} from '../models/platoSch';
+import {Menu} from '../models/menuSch';
+
+
 export const patchRouter = express.Router();
 
 patchRouter.patch('/ingredients', async (req, res) => {
@@ -33,4 +35,5 @@ patchRouter.patch('/ingredients', async (req, res) => {
       res.status(400).send(error);
     });
 });
+
 */
