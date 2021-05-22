@@ -1,6 +1,5 @@
 import {Document, Schema, model} from 'mongoose';
-import {ingredientInterface} from './alimentoSch';
-// import {Grupo} from './alimento';
+import {ingredientInterface, ingredientSchema} from './alimentoSch';
 
 export interface plateInterface extends Document {
   nombre: string,
@@ -8,15 +7,21 @@ export interface plateInterface extends Document {
   nutrients: number[],
   price: number,
   foods: ingredientInterface[],
+  predominant: string,
   category: 'Entrante' | 'Primer plato' | 'Segundo plato' | 'Postre'
 }
 
-const plateSchema = new Schema({
+export const plateSchema = new Schema({
   name: {
     type: String,
     unique: true,
     required: true,
     trim: true,
+    validate: (value: string) => {
+      if (!value.match(/^[A-Z]/)) {
+        throw new Error('Dish title must start with a capital letter');
+      }
+    },
   },
   amount: [
     {
@@ -40,7 +45,13 @@ const plateSchema = new Schema({
     },
   foods:
     {
-      type: [String, String, [Number], Number, String],
+      type: [ingredientSchema],
+      required: true,
+      trim: true,
+    },
+  predominant:
+    {
+      type: String,
       required: true,
       trim: true,
     },

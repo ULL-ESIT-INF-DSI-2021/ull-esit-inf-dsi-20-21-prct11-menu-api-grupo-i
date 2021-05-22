@@ -1,5 +1,6 @@
 import * as express from 'express';
 import {Ingredient} from '../models/alimentoSch';
+import {Plate} from '../models/platoSch';
 
 export const deleteRouter = express.Router();
 
@@ -31,13 +32,13 @@ deleteRouter.delete('/courses', async (req, res) => {
   }
 
   try {
-    const ingredient = await Ingredient.findOneAndDelete({
+    const plate = await Plate.findOneAndDelete({
       name: req.query.name.toString()});
 
-    if (!ingredient) {
+    if (!plate) {
       return res.status(404).send();
     }
-    return res.send(ingredient);
+    return res.send(plate);
   } catch (error) {
     return res.status(400).send();
   }

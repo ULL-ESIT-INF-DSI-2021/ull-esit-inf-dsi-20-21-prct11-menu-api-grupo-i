@@ -8,12 +8,17 @@ export interface ingredientInterface extends Document {
   group: 'Grupo1'| 'Grupo2'| 'Grupo3'| 'Grupo4'| 'Grupo5'
 }
 
-const ingredientSchema = new Schema({
+export const ingredientSchema = new Schema({
   name: {
     type: String,
     unique: true,
     required: true,
     trim: true,
+    validate: (value: string) => {
+      if (!value.match(/^[A-Z]/)) {
+        throw new Error('Ingredient title must start with a capital letter');
+      }
+    },
   },
   locality: {
     type: String,

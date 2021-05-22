@@ -1,5 +1,5 @@
 import * as express from 'express';
-import {Ingredient/* , ingredientInterface*/} from '../models/alimentoSch';
+import {Ingredient, ingredientInterface} from '../models/alimentoSch';
 import {Plate} from '../models/platoSch';
 
 export const postRouter = express.Router();
@@ -16,15 +16,12 @@ postRouter.post('/ingredients', async (req, res) => {
 });
 
 postRouter.post('/courses', async (req, res) => {
-  const {name, amount, price, nutrients, foods, category} = req.body;
-  // const plato = new Plate(req.body);
-  /*
+  const {name, amount, price, nutrients, foods, predominant, category} = req.body;
+
   const ingredientesVector: ingredientInterface[] = [];
   let aux;
-  console.log(foods);
   for (let i = 0; i < foods.length; i++) {
-    const filter = foods[i] ? {nombre: foods[i].toString()} : {};
-    aux = await Ingredient.findOne(filter);
+    aux = await Ingredient.findOne({name: foods[i].name});
     if (!(aux === null)) {
       ingredientesVector.push(aux);
     } else {
@@ -32,34 +29,22 @@ postRouter.post('/courses', async (req, res) => {
         error: 'El ingrediente no se encuentra en la base de datos',
       });
     }
-  }*/
-  console.log(foods);
-  try {
-    // await Adventure.findOne({ country: 'Croatia' }).exec();
-
-    const ingredients = await Ingredient.findOne({name: foods[0]});
-
-    if (!(ingredients === null)) {
-      console.log("se econtro")
-      return res.send(ingredients);
-    }
-    return res.status(404).send();
-  } catch (error) {
-    return res.status(500).send();
   }
+  console.log(name);
   const plato = new Plate({
     "name": name,
     "amount": amount,
     "price": price,
     "nutrients": nutrients,
-    "foods": foods,
+    "foods": ingredientesVector,
+    "predominant": predominant,
     "category": category,
   });
-
+  console.log(plato);
   try {
     await plato.save();
     res.status(201).send(plato);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(401).send(error);
   }
 });
