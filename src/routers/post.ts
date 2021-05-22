@@ -64,13 +64,9 @@ postRouter.post('/menus', async (req, res) => {
   const {name, platos} = req.body;
   const platosVector: plateInterface[] = [];
   let aux;
-  console.log(platos);
-  console.log(platos.length);
   for (let i = 0; i < platos.length; i++) {
-    console.log("entra ne el for")
     aux = await Plate.findOne({name: platos[i].name});
     if (!(aux === null)) {
-      console.log("PUSH")
       platosVector.push(aux);
     } else {
       res.status(400).send({
@@ -78,7 +74,6 @@ postRouter.post('/menus', async (req, res) => {
       });
     }
   }
-  console.log("platos del menu",platosVector);
   const compTotal = compositionMenu(platosVector);
   const precioTotal = priceMenu(platosVector);
 
