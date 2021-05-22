@@ -1,6 +1,6 @@
 import {Document, Schema, model} from 'mongoose';
 import {ingredientInterface} from './alimentoSch';
-import {Food} from './alimento';
+// import {Grupo} from './alimento';
 
 export interface plateInterface extends Document {
   nombre: string,
@@ -12,7 +12,7 @@ export interface plateInterface extends Document {
 }
 
 const plateSchema = new Schema({
-  nombre: {
+  name: {
     type: String,
     unique: true,
     required: true,
@@ -39,14 +39,11 @@ const plateSchema = new Schema({
       trim: true,
     },
   foods:
-  [
     {
-      type: Array,
-      ingrediente: Food,
+      type: [String, String, [Number], Number, String],
       required: true,
       trim: true,
     },
-  ],
   category: {
     type: String,
     required: true,
