@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(postRouter);
 app.use(getRouter);
 app.use(deleteRouter);
-app.use(defaultRouter);
 app.use(patchRouter);
+app.use(defaultRouter);
 
 const port = process.env.PORT || 3000;
 

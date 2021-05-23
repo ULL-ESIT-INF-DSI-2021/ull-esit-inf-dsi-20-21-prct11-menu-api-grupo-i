@@ -26,7 +26,8 @@ patchRouter.patch('/ingredients', async (req, res) => {
 
   try {
     const ingredient =
-    await Ingredient.findOneAndUpdate({name: req.query.name.toString()}, req.body, {
+    await
+    Ingredient.findOneAndUpdate({name: req.query.name.toString()}, req.body, {
       new: true,
       runValidators: true,
     });
