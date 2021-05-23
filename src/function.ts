@@ -93,7 +93,6 @@ export function compositionMenu(platoVector: plateInterface[]): number[] {
     hidratos += platoVector[i].nutrients[2];
     lipidos += platoVector[i].nutrients[3];
   }
-console.log(calorias);
   compTotal = [Math.trunc(calorias),
     Math.trunc(proteinas), Math.trunc(hidratos), Math.trunc(lipidos)];
 
