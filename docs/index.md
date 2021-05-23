@@ -136,8 +136,6 @@ Aquí se indican los enlaces para ver el contenido de la clase Alimento y sus re
 
 ## Conclusión<a name="conclu"></a>
 
-
-
 ---------------------
 
 ## Bibliografía <a name="biblio"></a>

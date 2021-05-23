@@ -25,7 +25,7 @@ getRouter.get('/ingredients', async (req, res) => {
   }
 });
 
-getRouter.get('/ingredients: id', async (req, res) => {
+getRouter.get('/ingredients/:id', async (req, res) => {
   try {
     const ingredients = await Ingredient.findById(req.params.id);
 
@@ -56,7 +56,7 @@ getRouter.get('/courses', async (req, res) => {
   }
 });
 
-getRouter.get('/courses: id', async (req, res) => {
+getRouter.get('/courses/:id', async (req, res) => {
   try {
     const plate = await Plate.findById(req.params.id);
 
@@ -87,7 +87,7 @@ getRouter.get('/menus', async (req, res) => {
   }
 });
 
-getRouter.get('/menus: id', async (req, res) => {
+getRouter.get('/menus/:id', async (req, res) => {
   try {
     const menu = await Menu.findById(req.params.id);
 

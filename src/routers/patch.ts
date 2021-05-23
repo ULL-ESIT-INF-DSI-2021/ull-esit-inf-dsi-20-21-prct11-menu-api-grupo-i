@@ -49,7 +49,7 @@ patchRouter.patch('/courses', async (req, res) => {
     });
   }
 
-  const allowedUpdates = ['name', 'amount', 'price', 'foods', 'predominant'];
+  const allowedUpdates = ['name', 'amount', 'price', 'foods', 'category'];
   const actualUpdates = Object.keys(req.body);
   const isValidUpdate =
     actualUpdates.every((update) => allowedUpdates.includes(update));
@@ -85,7 +85,7 @@ patchRouter.patch('/menus', async (req, res) => {
     });
   }
 
-  const allowedUpdates = ['name', 'price', 'platos',];
+  const allowedUpdates = ['name', 'price', 'platos'];
   const actualUpdates = Object.keys(req.body);
   const isValidUpdate =
     actualUpdates.every((update) => allowedUpdates.includes(update));

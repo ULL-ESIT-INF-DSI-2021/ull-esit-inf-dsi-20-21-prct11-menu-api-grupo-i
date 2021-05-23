@@ -42,6 +42,7 @@ postRouter.post('/courses', async (req, res) => {
   const compTotal = totalComposition(ingredientesVector, amount);
   const precioTotal = totalPrice(ingredientesVector, amount);
   const predom = predGroup(ingredientesVector);
+
   const plato = new Plate({
     "name": name,
     "amount": amount,
