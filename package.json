@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "heroku-postbuild": "tsc",
-    "dev": "tsc-watch --onSuccess \"node dist/server.js\"",
     "start": "node dist/server.js",
+    "dev": "tsc-watch --onSuccess \"node dist/server.js\"",
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov",
     "doc": "typedoc; touch ./docs/.nojekyll"
