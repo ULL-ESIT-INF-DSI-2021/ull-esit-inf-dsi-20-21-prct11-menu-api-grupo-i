@@ -3,6 +3,7 @@ import {Ingredient} from '../models/alimentoSch';
 import {Plate} from '../models/platoSch';
 import {Menu} from '../models/menuSch';
 
+// eslint-disable-next-line new-cap
 export const patchRouter = express.Router();
 
 patchRouter.patch('/ingredients', async (req, res) => {
