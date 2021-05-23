@@ -2,10 +2,11 @@
   "name": "ull-esit-inf-dsi-20-21-prct11-menu-api-grupo-i",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "heroku-postbuild": "tsc",
-    "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "dev": "tsc-watch --onSuccess \"node dist/server.js\"",
+    "start": "node dist/server.js",
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov",
     "doc": "typedoc; touch ./docs/.nojekyll"
